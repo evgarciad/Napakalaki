@@ -31,7 +31,8 @@ public class BadConsequence {
         nHiddenTreasures=nht;
     }
     
-    public BadConsequence(boolean dth){
+    public BadConsequence(String txt,boolean dth){
+        text=txt;
         death=dth;
     }
     
