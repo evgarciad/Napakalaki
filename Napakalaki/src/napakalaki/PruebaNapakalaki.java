@@ -24,7 +24,7 @@ public class PruebaNapakalaki {
         Prize prize;
         
         //3 Byakhees de bonanza
-        badConsequence = new BadConsequence("Pierdes tu armadura visible y otra oculta",0,new ArrayList(Arrays.asList(TreasureKind.ARMOR)), new ArrayList(Arrays.asList(TreasureKind.ARMOR)));
+        badConsequence = new BadConsequence("Pierdes tu armadura visible y otra oculta",0,new ArrayList(Arrays.asList(TreasureKind.ONEHAND)), new ArrayList(Arrays.asList(TreasureKind.ONEHAND)));
         prize = new Prize(2,1);       
         monstruos.add(new Monster("3 Byakhees de bonanza", 8, badConsequence, prize));
         
@@ -44,7 +44,7 @@ public class PruebaNapakalaki {
         monstruos.add(new Monster("Ángeles de la noche ibicenca", 14, badConsequence, prize));
         
         //El gorrón en el umbral
-        badConsequence = new BadConsequence("Pierdes todos tus tesoros visibles.",0,new ArrayList(Arrays.asList(TreasureKind.ONEHAND,TreasureKind.ONEHAND,TreasureKind.SHOES,TreasureKind.ARMOR,TreasureKind.BOTHHANDS,TreasureKind.HELMET)),new ArrayList());
+        badConsequence = new BadConsequence("Pierdes todos tus tesoros visibles.",0,new ArrayList(Arrays.asList(TreasureKind.ONEHAND,TreasureKind.SHOES,TreasureKind.ARMOR,TreasureKind.BOTHHANDS,TreasureKind.HELMET)),new ArrayList());
         prize = new Prize(3,1);
         monstruos.add(new Monster("El gorrón en el umbral", 10, badConsequence, prize));
                 
@@ -56,7 +56,7 @@ public class PruebaNapakalaki {
         //Bichgoot
         badConsequence = new BadConsequence("Sientes bichos bajo la ropa. Descarta la armadura visible.",0,new ArrayList(Arrays.asList(TreasureKind.ARMOR)),new ArrayList());
         prize = new Prize(1,1); 
-        monstruos.add(new Monster("Bichgoot", 2, badConsequence, prize));
+        monstruos.add(new Monster("Bichgoot", 14, badConsequence, prize));
         
         // Rey de la rosa
         badConsequence = new BadConsequence("Pierdes 5 niveles y 3 tesoros visibles", 5, 3, 0);
@@ -105,12 +105,12 @@ public class PruebaNapakalaki {
         monstruos.add(new Monster("Roboggoth", 8, badConsequence, prize));
                 
         //El espia
-        badConsequence = new BadConsequence("Te asusta en la noche. Pierdes un casco visible.",0,new ArrayList(Arrays.asList(TreasureKind.HELMET)),new ArrayList());
+        badConsequence = new BadConsequence("Te asustaa en la noche. Pierdes un casco visible.",0,new ArrayList(Arrays.asList(TreasureKind.HELMET)),new ArrayList());
         prize = new Prize(1,1);
         monstruos.add(new Monster("El espia", 5, badConsequence, prize));
                 
         //El Lenguas
-        badConsequence = new BadConsequence("Menudo susto te llevas. Pierdes 2 niveles y 5 tesoros visibles.",2,5,0);
+        badConsequence = new BadConsequence("Menudo susto te llevas. Pierdes 2 niveles y 5 tesoros visibles.",2,new ArrayList(Arrays.asList(TreasureKind.ONEHAND,TreasureKind.ONEHAND,TreasureKind.BOTHHANDS,TreasureKind.ARMOR,TreasureKind.HELMET,TreasureKind.SHOES)),new ArrayList());
         prize = new Prize(1,1);
         monstruos.add(new Monster("El Lenguas", 20, badConsequence, prize));
                 
@@ -119,6 +119,43 @@ public class PruebaNapakalaki {
         prize = new Prize(1,1);
         monstruos.add(new Monster("Bicéfalo", 20, badConsequence, prize));
         
+        // Monstruos con el nivel de combate mayor que 10
+        
+        System.out.print("Monstruos con el nivel de combate mayor que 10");
+        System.out.print("\n\n");
+        System.out.print("\n\n");
+        for(Monster m : monstruos ){
+                if(m.getCombatLevel()>10){
+                    System.out.print(m);
+                    System.out.print("\n\n");
+                }
+        }
+        
+        //Monstruos que tienen un mal rollo que implique sólo pérdida de niveles
+        
+        System.out.print("Monstruos que tienen un mal rollo que implique sólo pérdida de niveles");
+        System.out.print("\n\n");
+        System.out.print("\n\n");
+        for(Monster m : monstruos ){
+                if(m.getmalRollo().getNVT() == 0 && m.getmalRollo().getNHT() == 0 && m.getmalRollo().getLevels() > 0 ){
+                    System.out.print(m);
+                    System.out.print("\n\n");
+                }
+        }
+        
+        // Monstruos que su buen rollo indique una ganancia de niveles mayor que 1
+        System.out.print("Monstruos que su buen rollo indique una ganancia de niveles mayor que 1");
+        System.out.print("\n\n");
+        System.out.print("\n\n");
+        for(Monster m : monstruos ){
+                if(m.getbuenRollo().getLevel() > 1){
+                    System.out.print(m);
+                    System.out.print("\n\n");
+                }
+        }
+        
+      
     }
+    
     
 }
