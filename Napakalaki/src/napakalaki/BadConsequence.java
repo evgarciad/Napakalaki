@@ -43,6 +43,10 @@ public class BadConsequence {
         specificHiddenTreasures=tHidden;
     }
     
+    public boolean isEmpty(){
+        return false;
+    }
+    
     public String getText(){
         return text;
     }
@@ -62,6 +66,26 @@ public class BadConsequence {
     public boolean getDeath(){
         return death;
     }
+    
+    public ArrayList<TreasureKind> getSpecificHiddenTreasures(){
+        return specificHiddenTreasures;
+    }
+    
+    public ArrayList<TreasureKind> getSpecificVisibleTreasures(){
+        return specificVisibleTreasures;
+    }
+    
+    public void substractVisibleTreasure(Treasure t){
+        
+    }
+    
+    public void  substractHiddenTreasure(Treasure t){
+        
+    }
+    
+    public BadConsequence adjustToFitTreasureLists(ArrayList<Treasure> v,ArrayList<Treasure> h){
+        return null;
+    } 
     
     public String toString(){
         return "Mal rollo: = " + text + " ,niveles que pierde = " + Integer.toString(levels) + " ,num tesoros visibles que pierdes: " +  Integer.toString(nVisibleTreasures) + " ,num tesoros escondidos que pierdes: " + Integer.toString(nHiddenTreasures);
