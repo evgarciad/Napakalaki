@@ -35,11 +35,19 @@ public class Player {
     }
     
     private void bringToLife(){
-        
+        dead=false;
     }
     
     private int getCombatLevel(){
-        return 0;
+        int v=0,h=0,nivel_total=0;
+        for(int i=0;i<visibleTreasures.size();i++){
+            v=v+visibleTreasures.get(i).getBonus();
+            h=h+hiddenTreasures.get(i).getBonus();
+        }
+        
+        nivel_total=level+v+h;
+        return nivel_total;
+        
     }
     
     private void incrementLevels(int i){
@@ -68,11 +76,21 @@ public class Player {
     }
     
     private int howManyVisibleTreasures(TreasureKind tKind){
-        return 0;
+        int vtt=0;
+        
+        for(int i=0;i<visibleTreasures.size();i++){
+            if(visibleTreasures.get(i).getType()==tKind)    
+                vtt++;
+        }
+        
+        return vtt;
         
     }
     
     private void dielfNoTreasures(){
+        
+        if(visibleTreasures.size()==0 && hiddenTreasures.size()==0)
+            dead=true;
         
     }
     
@@ -104,7 +122,12 @@ public class Player {
     }
     
     public boolean validState(){
-        return false;
+        boolean state=false;
+        
+        if(pendingBadConsequence.isEmpty() && hiddenTreasures.size()<=4 )
+               state=true;
+        
+        return state;
     }
     
     public void initTreasures(){
