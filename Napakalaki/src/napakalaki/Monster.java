@@ -39,6 +39,13 @@ public class Monster {
         return malRollo;
     }
     
+    public int getLevelsGained(){
+        return buenRollo.getLevel();
+    }
+    
+    public int getTreasuresGained(){
+        return buenRollo.getLevel();
+    }
      public String toString(){
         return "Nombre = " + name + " ,nivel de combate = " + Integer.toString(combatLevel) + " , buen rollo: " + buenRollo + " , mal rollo: " + malRollo;
     }
