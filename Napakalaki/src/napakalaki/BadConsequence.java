@@ -55,11 +55,11 @@ public class BadConsequence {
         return levels;
     }
     
-    public int getNVT(){
+    public int getNVsisibleTreasures(){
         return nVisibleTreasures;
     }
     
-    public int getNHT(){
+    public int getNHiddenTreasures(){
         return nHiddenTreasures;
     }
     

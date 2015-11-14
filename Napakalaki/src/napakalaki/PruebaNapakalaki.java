@@ -137,7 +137,7 @@ public class PruebaNapakalaki {
         System.out.print("\n\n");
         System.out.print("\n\n");
         for(Monster m : monstruos ){
-                if(m.getmalRollo().getNVT() == 0 && m.getmalRollo().getNHT() == 0 && m.getmalRollo().getLevels() > 0 ){
+                if(m.getmalRollo().getNVsisibleTreasures() == 0 && m.getmalRollo().getNHiddenTreasures() == 0 && m.getmalRollo().getLevels() > 0 ){
                     System.out.print(m);
                     System.out.print("\n\n");
                 }
