@@ -69,10 +69,12 @@ public class CardDealer {
     }
     
     private void shuffleTreasures(){
+            Collections.shuffle(unusedTreasures);
         
     }
     
     private void shuffleMonsters(){
+            Collections.shuffle(unusedMonsters);
         
     }
     
@@ -90,10 +92,13 @@ public class CardDealer {
     
     public void giveTreasureBack(Treasure t){
         
+        usedTreasures.add(t);
+        
     }
     
     public void giveMonsterBack(Monster m){
-        
+     
+            usedMonsters.add(m);
     }
     
     public void initCards(){
