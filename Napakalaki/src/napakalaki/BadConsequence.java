@@ -44,7 +44,15 @@ public class BadConsequence {
     }
     
     public boolean isEmpty(){
-        return false;
+         
+        boolean empty = false;
+
+        if (levels == 0 && death == false && nHiddenTreasures == 0 && nVisibleTreasures == 0 && specificHiddenTreasures.isEmpty() && specificVisibleTreasures.isEmpty()) {
+
+            empty = true;
+        }
+
+        return empty;
     }
     
     public String getText(){
