@@ -13,16 +13,14 @@ import java.util.ArrayList;
  */
 public class Napakalaki {
     
-    private static Napakalaki instance;
+    private static final Napakalaki instance=new Napakalaki();
     private Monster currentMonster;
     private CardDealer dealer;
     private Player currentPlayer;
     private ArrayList<Player> players= new ArrayList();
     
     
-    private Napakalaki(){
-        instance=null;
-    }
+    private Napakalaki(){}
     
     private void initPlayers(ArrayList<String> names){
         

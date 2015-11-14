@@ -11,11 +11,9 @@ package napakalaki;
  */
 public class Dice {
     
-    private static Dice instance;
+    private static final Dice instance=new Dice();
     
-    private Dice(){
-        instance=null;
-    }
+    private Dice(){}
     
     public static Dice getInstance(){
         return instance;
