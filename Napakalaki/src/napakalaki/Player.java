@@ -17,7 +17,7 @@ public class Player {
     private String name;
     private int level;
     private boolean dead;
-    private boolean canSteal;
+    private boolean canISteal;
     private  Player enemy;
     private ArrayList<Treasure> visibleTreasures= new ArrayList();
     private BadConsequence pendingBadConsequence;
@@ -151,12 +151,16 @@ public class Player {
         return null;
     }
     
-    public boolean canSteal(){
-        return false;
+    public boolean canISteal(){
+        return canISteal;
     }
     
     private boolean canYouGiveMeATreasure(){
-        return false;
+        boolean canYou=false;
+        if(canISteal == true)
+          canYou = true;
+       
+        return canYou;
     }
     
     private void haveStolen(){
